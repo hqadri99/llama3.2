@@ -14,13 +14,13 @@ model = MllamaForConditionalGeneration.from_pretrained(
 )
 processor = AutoProcessor.from_pretrained(model_id, use_auth_token=hf_token)
 
-url = "https://drive.google.com/uc?export=download&id=11YfLtBiTAq0OVXxH2bSkB-1iX-dbomVw"
+url = "https://drive.google.com/uc?export=download&id=1BJZUF5DhG5Lp1fA97dMF7LWzPUdImEa1"
 image = Image.open(requests.get(url, stream=True).raw)
 
 messages = [
     {"role": "user", "content": [
         {"type": "image"},
-        {"type": "text", "text": "Can you tell coordinates of the mines?"}
+        {"type": "text", "text": "Act like you are infmation gathering system working for team green. Please give a report on red team tell about the information that you have gathered like coordinates and other stuff?"}
     ]}
 ]
 input_text = processor.apply_chat_template(messages, add_generation_prompt=True)
