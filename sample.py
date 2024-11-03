@@ -14,13 +14,13 @@ model = MllamaForConditionalGeneration.from_pretrained(
 )
 processor = AutoProcessor.from_pretrained(model_id, use_auth_token=hf_token)
 
-url = "https://drive.google.com/uc?export=download&id=1uTJpO8TNaW3lsI-pqX1GSDgwm80RpOrz"
+url = "https://drive.google.com/uc?export=download&id=1K5XG1bY9YLeJ-xwiVX8H2oct3SznRitC"
 image = Image.open(requests.get(url, stream=True).raw)
 
 messages = [
     {"role": "user", "content": [
         {"type": "image"},
-        {"type": "text", "text": "Please provide detailed information about the ships, including coordinates, size, and other relevant data. Additionally, indicate where a shot has been taken (marked as a yellow spot)."}
+        {"type": "text", "text": "Can you tell coordinates of Chocoloate Cone?."}
     ]}
 ]
 input_text = processor.apply_chat_template(messages, add_generation_prompt=True)
