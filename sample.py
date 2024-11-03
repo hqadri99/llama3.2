@@ -20,7 +20,7 @@ image = Image.open(requests.get(url, stream=True).raw)
 messages = [
     {"role": "user", "content": [
         {"type": "image"},
-        {"type": "text", "text": "Can you share locations of the green ships?"}
+        {"type": "text", "text": "Can you share coordinates of the green ships?"}
     ]}
 ]
 input_text = processor.apply_chat_template(messages, add_generation_prompt=True)
