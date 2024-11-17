@@ -49,6 +49,10 @@ model = MllamaForConditionalGeneration.from_pretrained(
     device_map="auto",
     use_auth_token=hf_token,
 )
+
+# Tie weights explicitly
+model.tie_weights()
+
 processor = AutoProcessor.from_pretrained(model_id, use_auth_token=hf_token)
 
 url = "https://drive.google.com/uc?export=download&id=1BJZUF5DhG5Lp1fA97dMF7LWzPUdImEa1"
