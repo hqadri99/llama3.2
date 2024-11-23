@@ -40,7 +40,8 @@ import torch
 from PIL import Image
 from transformers import MllamaForConditionalGeneration, AutoProcessor
 
-model_id = "meta-llama/Llama-3.2-90B-Vision-Instruct"
+# model_id = "meta-llama/Llama-3.2-90B-Vision-Instruct"
+model_id = "meta-llama/Llama-3.2-13B-Vision-Instruct"
 hf_token = "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"
 
 model = MllamaForConditionalGeneration.from_pretrained(
