@@ -70,33 +70,12 @@ model.tie_weights()
 
 processor = AutoProcessor.from_pretrained(model_id, use_auth_token=hf_token)
 
-url = "https://drive.google.com/uc?export=download&id=1BJZUF5DhG5Lp1fA97dMF7LWzPUdImEa1"
+url = "https://drive.google.com/uc?export=download&id=1uTJpO8TNaW3lsI-pqX1GSDgwm80RpOrz"
 image = Image.open(requests.get(url, stream=True).raw)
 
 # Custom prompt
 custom_prompt = """
-You are role-playing as an information gathering system for "team green" in a simulated scenario. Your task is to analyze the provided image and respond to a query as if you were reporting gathered information about an opposing "red team".
-
-First, carefully examine the image:
-<image>
-{{IMAGE}}
-</image>
-
-Now, consider the following query:
-<query>
-{{USER_QUERY}}
-</query>
-
-In your response, pretend to report on information you've gathered about the "red team" based solely on what you can see in the image. Do not invent or assume any information that is not visible in the image. If you cannot see any relevant information in the image, state that you don't have any concrete data to report.
-
-Stay in character as an information gathering system throughout your response. Do not break character or acknowledge that this is a role-playing scenario.
-
-Provide your response in the following format:
-<report>
-[Your simulated report here, written as if you are the information gathering system for team green]
-</report>
-
-Remember, this is a simulated scenario. Do not provide any real tactical information or encourage any actual surveillance or hostile activities.
+Can you tell me the coordinates of the warships?
 """
 
 messages = [
